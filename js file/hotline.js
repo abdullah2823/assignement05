@@ -12,6 +12,7 @@ for (const btn of clickBtn) {
         const phoneNumber = btn.parentNode.parentNode.children[1].children[2].innerText;
         const serviseName = btn.parentNode.parentNode.children[1].children[0].innerText;
         console.log(serviseName);
+        
         const createHistory = getElement('history-class');
         const history = document.createElement('history');
         history.innerHTML =
@@ -23,10 +24,9 @@ for (const btn of clickBtn) {
                 <p class="text-[18px] font-normal text-[#111111]">11:36:58 AM</p>
             </div>`
         createHistory.appendChild(history);
-        // console.log(createHistory);
 
 
-        // // alert('Calling to ' + serviseName + ' ' + phoneNumber);
+        alert('Calling to ' + serviseName + ' ' + phoneNumber);
         
 
 
