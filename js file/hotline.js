@@ -5,6 +5,27 @@ function getElement(id) {
     return element;
 }
 
+function getCurrentTime() {
+    let now = new Date();
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+    let seconds = now.getSeconds();
+    if (hours >= 12) {
+        ampm = "PM";
+    } else {
+        ampm = "AM";
+    }
+
+    hours = hours % 12;
+    hours = hours ? hours : 12;
+
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+    return hours + ":" + minutes + ":" + seconds + " " + ampm;
+}
+
+
 const clickBtn = document.getElementsByClassName('click-btn');
 for (const btn of clickBtn) {
     btn.addEventListener('click', function () {
@@ -37,8 +58,6 @@ for (const btn of clickBtn) {
 
 
 
-
-
         const createHistory = getElement('history-class');
         const history = document.createElement('history');
         history.innerHTML =
@@ -47,7 +66,7 @@ for (const btn of clickBtn) {
                     <h2 class="text-[18px] font-normal text-[#111111]">${serviseName}</h2>
                     <p class="text-[#5C5C5C] text-[18px] font-normal">${serviseNumber}</p>
                 </div>
-                <p class="text-[18px] font-normal text-[#111111]">11:36:58 AM</p>
+                <p class="text-[18px] font-normal text-[#111111]">${getCurrentTime()}</p>
             </div>`
         createHistory.appendChild(history);
 
