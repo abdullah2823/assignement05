@@ -29,14 +29,14 @@ for (const btn of clickBtn) {
         const newCoinCount1 = previousCoinCount1 + 1;
         heartCount.innerText = newCoinCount1;
 
-       const clearSection = getElement('clear-section');
-         clearSection.addEventListener('click', function(){
+        const clearSection = getElement('clear-section');
+        clearSection.addEventListener('click', function () {
             const createHistory = getElement('history-class');
             history.innerHTML = '';
-         })
+        })
 
 
-         
+
 
 
         const createHistory = getElement('history-class');
@@ -57,3 +57,19 @@ for (const btn of clickBtn) {
 
     })
 }
+
+const copyBtn = document.getElementsByClassName('copy-btn');
+for (const btn of copyBtn) {
+    btn.addEventListener('click', function () {
+        const copyCount = document.getElementById('copy-count-click');
+        const copyCountString = copyCount.innerText;
+        const previousCopyCount = parseInt(copyCountString);
+        const newCopyCount = previousCopyCount + 1;
+        copyCount.innerText = newCopyCount;
+
+
+        const copyNumber = btn.parentNode.parentNode.children[1].children[2].innerText;
+        alert('Number Copied: ' + copyNumber)})
+
+        
+    }
