@@ -18,12 +18,22 @@ for (const btn of clickBtn) {
         const newCoinCount = previousCoinCount - 20;
         coinCount.innerText = newCoinCount;
         if (newCoinCount < 0) {
-            alert('You have no coins');
+            alert("আপনার পর্যাপ্ত কয়েন নেই। কল করতে হলে কমপক্ষে ২০ কয়েন লাগবে।");
             coinCount.innerText = previousCoinCount;
             return;
         }
 
-       
+        const heartCount = document.getElementById('heart-count');
+        const heartCountString = heartCount.innerText;
+        const previousCoinCount1 = parseInt(heartCountString);
+        const newCoinCount1 = previousCoinCount1 + 1;
+        heartCount.innerText = newCoinCount1;
+
+       const clearSection = getElement('clear-section');
+         clearSection.addEventListener('click', function(){
+            const createHistory = getElement('history-class');
+            history.innerHTML = '';
+         })
 
 
         const createHistory = getElement('history-class');
@@ -42,12 +52,5 @@ for (const btn of clickBtn) {
         alert('Calling to ' + serviseName + ' ' + phoneNumber);
 
 
-
     })
 }
-
-const addCoinBtn = document.getElementById('heart-count');
-for (const adBtn of addCoinBtn) {
-    adBtn.addEventListener('click', function () {
-        console.log('clicked');
-    }
